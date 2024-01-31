@@ -1,0 +1,218 @@
+    <html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="css/Index.css">
+     <link rel="stylesheet" href="css/choice.css">
+    </head>
+<body>
+
+<div class="body_part">
+  <div class="list_of_header">
+    <h3>EERCS</h3>
+    <ul>
+      <li>
+            <a href="index.html">  
+<img src='icon/home.svg'>
+   
+       Home
+       </a>
+      </li>
+      
+
+      
+      
+      <li>
+            <a href="list_of_exam.html">   
+<img src='icon/question.svg'>
+     Question</a></li>
+ 
+      <li>
+   <a href="download.html"> 
+<img src='icon/resource.svg'>
+        
+        Resource</a></li>
+      
+    </ul>
+</div>
+  <div class="time-container">
+   <div id="answer_panel">10/10</div>
+<div id="clock">
+	<span id="seconds">4:59</span>
+</div></div>
+   <div id="cont"> 
+
+      
+     <h4> Which one of the following is not a wireless attack?
+</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p> phishing</p></label>
+        <label><input type="radio" >
+    <li>B.</li><p>
+rogue access point
+    </p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p>bluejacking </p></label>
+        <label><input type="radio">
+    <li>D.</li><p>bluesnarfing
+</p></label>
+ </div>
+      <h4> Which one of the following exit is a an
+involuntary actions?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p>Normal exit</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> Terminate exit
+ </p></label>
+        <label><input type="radio">
+    <li>C.</li><p> Fatal exit</p></label>
+        <label><input type="radio"  data-answer=1>
+    <li>D.</li><p> Error exi</p  ></label>
+ </div>
+ 
+       <h4>What will be the output of this code?
+       int x = 15, y = 2;
+int z = x / y;
+cout << z;</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p> 7</p></label>
+        <label><input type="radio">
+    <li>B.</li><p>7.5</p></label>
+        <label><input type="radio" >
+    <li>C.</li><p>
+    
+3
+    </p></label>
+        <label><input type="radio">
+    <li>D.</li><p>  12.5</p></label>
+ </div>
+ 
+      <h4> Which one of the following is used the constants in Java?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p>
+const</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> final</p></label>
+        <label><input type="radio">
+    <li>C.</li>
+    <p>define</p>
+    </label>
+        <label><input type="radio">
+    <li>D.</li><p>All of the above</p></label>
+ </div>
+ 
+           <h4> Which one of the software testing phases is the most time-consuming? </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> Unit testing</p></label>
+        <label><input type="radio" >
+    <li>B.</li><p> Acceptance testing</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p> System testing</p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Integration testing</p></label>
+ </div>
+                <button onclick="result()">Result</button>
+
+                <script>
+        
+                    var h4=document.getElementsByTagName("h4");
+                var k, i,j,inp;
+               inp=document.getElementsByTagName("input");
+                var i=0,r=0;
+               
+               for(j=0; j<inp.length;j++)
+               {
+            inp[i++].setAttribute("name","q"+j); 
+             inp[i++].setAttribute("name","q"+j); 
+            inp[i++].setAttribute("name","q"+j); 
+            inp[i++].setAttribute("name","q"+j); 
+               
+               }
+               
+            
+             function result()
+             {
+             var totalans=0, correctAns=0;
+              var input=document.getElementsByTagName("input");
+             var label=document.getElementsByTagName("label");
+             for(i=0;i<input.length;i++)
+             {
+               
+               if(input[i].checked)
+               {
+                 totalans++;
+                 if(input[i].dataset.answer==1)
+                 {
+                  label[i].style.backgroundColor="#00cc99";
+                       label[i].style.color="white";  
+                    correctAns++;
+                 }
+                 else{
+                 label[i].style.backgroundColor="red";  
+                      label[i].style.color="white";  
+               }}
+             }
+             if(totalans<=h4.length)
+             {
+               document.getElementById("answer_panel").style.display="block";
+            document.getElementById('answer_panel').innerHTML=correctAns+"/5"; 
+            document.getElementById('clock').style.display="none";
+             }
+             }
+            
+            </script>
+            
+            
+            <script>
+                
+               timeLeft = 59;
+            min=5;
+            min--;
+            function countdown() {
+              
+                timeLeft--;
+                document.getElementById("seconds").innerHTML = String(min+":"+ timeLeft );
+                if (timeLeft > 0) {
+                    setTimeout(countdown, 1000);
+                }
+            else	if(timeLeft<1&&min>0)
+                {
+                  timeLeft =59;
+                  timeLeft--;
+                  min--;
+                  setTimeout(countdown, 1000);
+                }
+                if(timeLeft<1)
+              {
+               document.getElementById("answer_panel").style.display="block";
+              // document.write(
+                 result();
+              
+              }
+                
+            };
+            
+            setTimeout(countdown, 1000);
+            
+            </script>
+                                    
+             
+                
+            <h5> &#169; 2024|<a href="mailto: elijeb9@gmail.com">elijeb9@gmail.com</a></h5>
+
+    <br>
+</div>
+
+</div>
+
+    </body>

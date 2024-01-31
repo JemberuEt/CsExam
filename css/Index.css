@@ -1,0 +1,138 @@
+  body{  margin:0px;
+padding:0px;
+background:#d0dbe7; 
+
+ }
+ .list_of_header{
+  z-index:3;
+  font-family: sans-serif;
+     
+       margin: 0px;    
+
+       display: flex;
+       justify-content: space-between;
+         background:rgb(51, 153, 102);
+   align-items: center;
+   
+   position:fixed;
+width:100%;
+
+ }
+ .list_of_header h3{
+  padding:0px 10px;
+  background:rgb(51, 153, 102);
+top:0;
+
+color:#fff;
+ }
+
+.list_of_header ul{
+  list-style:none;
+  margin: 0px;    
+  display: flex;
+     }
+     .list_of_header li a{
+       
+       color:#fff;
+      text-decoration: none;
+     margin:0px;
+     }
+
+        .list_of_header li a img{
+        width:16px;
+        height:16px;
+        margin:0px;
+        }
+     .list_of_header   li{
+  padding:10px 30px;
+  transition: 0.3s;
+   }
+       .list_of_header li:hover{
+         opacity: 0.7;
+       }
+
+  
+  
+  @media only screen and (max-width:768px)  {
+
+    .list_of_header{
+  
+      position:fixed;
+    
+      bottom:0;
+      padding:0px;
+      width:100%;
+      margin:0px;
+      margin-right:100px;
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+    }
+    .list_of_header h3{
+      padding: 3px;
+      position: fixed;
+      margin: 0px;
+      text-align: center;
+    top:0;
+
+     }
+     .list_of_header li a{
+
+      font-size: 12px;
+      font-weight: 700;
+      display:flex;
+      cursor: pointer;
+      flex-direction: column;
+      padding:3px 10px;
+      align-items:center;
+    }
+   }
+
+
+
+
+
+  @media only screen and (max-width:480px)  {
+
+    .list_of_header{
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+      position:fixed;
+    
+      bottom:0;
+      padding:0px;
+      width:100%;
+      margin:0px;
+      margin-right:100px;
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+    }
+
+    .list_of_header h3{
+      margin: 0px;
+      padding:3px;
+      position: fixed;
+     display:none; 
+    top:0;
+
+     }
+     .list_of_header li{
+      
+      font-size: 14px;
+      font-weight: 600;
+      display:flex;
+      flex-direction: column;
+      padding:3px 10px;
+      align-items:center;
+    }
+    
+ }
+ h5{
+   text-align:center;
+   color:#808080;
+ } 
+ h5 a{
+   text-decoration:none;
+   color:#1a8cff;
+ }

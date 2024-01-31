@@ -1,0 +1,209 @@
+    <html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="css/Index.css">
+     <link rel="stylesheet" href="css/choice.css">
+    </head>
+<body>
+
+<div class="body_part">
+  <div class="list_of_header">
+    <h3>EERCS</h3>
+    <ul>
+      <li>
+            <a href="index.html">  
+<img src='icon/home.svg'>
+   
+       Home
+       </a>
+      </li>
+      
+
+      
+      
+      <li>
+            <a href="list_of_exam.html">   
+<img src='icon/question.svg'>
+     Question</a></li>
+ 
+      <li>
+   <a href="download.html"> 
+<img src='icon/resource.svg'>
+        
+        Resource</a></li>
+      
+    </ul>
+</div>
+  <div class="time-container">
+   <div id="answer_panel">10/10</div>
+<div id="clock">
+	<span id="seconds">4:59</span>
+</div></div>
+   <div id="cont"> 
+
+      
+     <h4> Which properties of the environment are wrongly coupled? </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" >
+    <li>A.</li><p> Discrete -> Continuous</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p>
+     Partially observable -> Fully observable 
+    </p></label>
+        <label><input type="radio">
+    <li>C.</li><p> Static -> Stochastic</p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Episodic -> Non-episodic</p></label>
+ </div>
+      <h4> Which one of the following is not correct regarding TCP and UDP protocols? </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> Both manage communication of many applications</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> TCP is connectionless, while UDP is connection-oriented</p></label>
+        <label><input type="radio">
+    <li>C.</li><p> TCP is connection-oriented, while UDP is connectionless</p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Both are transport layer protocols</p></label>
+ </div>
+ 
+       <h4>In which transmission impairment does the effect of one transmission wire have on the other? </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> Induced</p></label>
+        <label><input type="radio">
+    <li>B.</li><p>Impulse </p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p>
+    Crosstalk  
+    </p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Thermal</p></label>
+ </div>
+ 
+      <h4> Which of the following generation that stated for the high level languages like C++, Java, Python? </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p> 2<sup>nd</sup> generation</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> 3rd<sup>rd</sup> generation</p></label>
+        <label><input type="radio">
+    <li>C.</li>
+    <p> 4<sup>th</sup> generation</p>
+    </label>
+        <label><input type="radio">
+    <li>D.</li><p> None of the above</p></label>
+ </div>
+ 
+           <h4> Which network security issue shows the level of weakness in networks and devices? </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> Attack</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> Vulnerability</p></label>
+        <label><input type="radio">
+    <li>C.</li><p> Availability</p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Threat</p></label>
+ </div>
+                <button onclick="result()">Result</button>
+<script>
+        
+        var h4=document.getElementsByTagName("h4");
+    var k, i,j,inp;
+   inp=document.getElementsByTagName("input");
+    var i=0,r=0;
+   
+   for(j=0; j<inp.length;j++)
+   {
+inp[i++].setAttribute("name","q"+j); 
+ inp[i++].setAttribute("name","q"+j); 
+inp[i++].setAttribute("name","q"+j); 
+inp[i++].setAttribute("name","q"+j); 
+   
+   }
+   
+
+ function result()
+ {
+ var totalans=0, correctAns=0;
+  var input=document.getElementsByTagName("input");
+ var label=document.getElementsByTagName("label");
+ for(i=0;i<input.length;i++)
+ {
+   
+   if(input[i].checked)
+   {
+     totalans++;
+     if(input[i].dataset.answer==1)
+     {
+      label[i].style.backgroundColor="#00cc99";
+           label[i].style.color="white";  
+        correctAns++;
+     }
+     else{
+     label[i].style.backgroundColor="red";  
+          label[i].style.color="white";  
+   }}
+ }
+ if(totalans<=h4.length)
+ {
+   document.getElementById("answer_panel").style.display="block";
+document.getElementById('answer_panel').innerHTML=correctAns+"/5"; 
+document.getElementById('clock').style.display="none";
+ }
+ }
+
+</script>
+
+
+<script>
+    
+   timeLeft = 59;
+min=5;
+min--;
+function countdown() {
+  
+	timeLeft--;
+	document.getElementById("seconds").innerHTML = String(min+":"+ timeLeft );
+	if (timeLeft > 0) {
+		setTimeout(countdown, 1000);
+	}
+else	if(timeLeft<1&&min>0)
+	{
+	  timeLeft =59;
+	  timeLeft--;
+	  min--;
+	  setTimeout(countdown, 1000);
+	}
+	if(timeLeft<1)
+  {
+   document.getElementById("answer_panel").style.display="block";
+  // document.write(
+     result();
+  
+  }
+	
+};
+
+setTimeout(countdown, 1000);
+
+</script>
+                      
+                
+                
+   
+
+          <h5> &#169; 2024|<a href="mailto: elijeb9@gmail.com">elijeb9@gmail.com</a></h5>
+    <br>
+</div>
+
+</div>
+
+    </body>

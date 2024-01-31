@@ -1,0 +1,214 @@
+    <html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="css/Index.css">
+     <link rel="stylesheet" href="css/choice.css">
+    </head>
+<body>
+
+<div class="body_part">
+  <div class="list_of_header">
+    <h3>EERCS</h3>
+    <ul>
+      <li>
+            <a href="index.html">  
+<img src='icon/home.svg'>
+   
+       Home
+       </a>
+      </li>
+      
+
+      
+      
+      <li>
+            <a href="list_of_exam.html">   
+<img src='icon/question.svg'>
+     Question</a></li>
+ 
+      <li>
+   <a href="download.html"> 
+<img src='icon/resource.svg'>
+        
+        Resource</a></li>
+      
+    </ul>
+</div>
+  <div class="time-container">
+   <div id="answer_panel">10/10</div>
+<div id="clock">
+	<span id="seconds">4:59</span>
+</div></div>
+   <div id="cont"> 
+
+      
+     <h4> Which one of the following is not correct about heap files?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" >
+    <li>A.</li><p> Record insertion is efficient</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p>
+Sorting is required to read records in a particular field order
+    </p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p>New records are inserted at the beginning of the file </p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Linear search can be used to search for the necessary record</p></label>
+ </div>
+      <h4> Which one of the following is not a purpose of code optimization?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> Producing fewer instructions</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> Achieving faster execution
+ </p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p> Changing the behavior of the program</p></label>
+        <label><input type="radio">
+    <li>D.</li><p> Producing better code</p></label>
+ </div>
+ 
+       <h4>Which one of the following is not true about the web?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p> XHTML pages are static</p></label>
+        <label><input type="radio">
+    <li>B.</li><p>PHP is a web scripting language used to make web pages dynamic</p></label>
+        <label><input type="radio" >
+    <li>C.</li><p>
+    JavaScript is a web scripting language used to make web pages dynamic
+
+    </p></label>
+        <label><input type="radio">
+    <li>D.</li><p>  HTML pages are dynamic</p></label>
+ </div>
+ 
+      <h4> In which case is a dedicated communication path between the sender and receiver established?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p>Circuit switching</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> Multiplexing</p></label>
+        <label><input type="radio">
+    <li>C.</li>
+    <p>Broadcasting</p>
+    </label>
+        <label><input type="radio">
+    <li>D.</li><p> Packet switching</p></label>
+ </div>
+ 
+           <h4>  </h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> REVOKE</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p> GRANT</p></label>
+        <label><input type="radio">
+    <li>C.</li><p> DISTINCT</p></label>
+        <label><input type="radio">
+    <li>D.</li><p> None of the above</p></label>
+ </div>
+                <button onclick="result()">Result</button>
+
+                <script>
+        
+                    var h4=document.getElementsByTagName("h4");
+                var k, i,j,inp;
+               inp=document.getElementsByTagName("input");
+                var i=0,r=0;
+               
+               for(j=0; j<inp.length;j++)
+               {
+            inp[i++].setAttribute("name","q"+j); 
+             inp[i++].setAttribute("name","q"+j); 
+            inp[i++].setAttribute("name","q"+j); 
+            inp[i++].setAttribute("name","q"+j); 
+               
+               }
+               
+            
+             function result()
+             {
+             var totalans=0, correctAns=0;
+              var input=document.getElementsByTagName("input");
+             var label=document.getElementsByTagName("label");
+             for(i=0;i<input.length;i++)
+             {
+               
+               if(input[i].checked)
+               {
+                 totalans++;
+                 if(input[i].dataset.answer==1)
+                 {
+                  label[i].style.backgroundColor="#00cc99";
+                       label[i].style.color="white";  
+                    correctAns++;
+                 }
+                 else{
+                 label[i].style.backgroundColor="red";  
+                      label[i].style.color="white";  
+               }}
+             }
+             if(totalans<=h4.length)
+             {
+               document.getElementById("answer_panel").style.display="block";
+            document.getElementById('answer_panel').innerHTML=correctAns+"/5"; 
+            document.getElementById('clock').style.display="none";
+             }
+             }
+            
+            </script>
+            
+            
+            <script>
+                
+               timeLeft = 59;
+            min=5;
+            min--;
+            function countdown() {
+              
+                timeLeft--;
+                document.getElementById("seconds").innerHTML = String(min+":"+ timeLeft );
+                if (timeLeft > 0) {
+                    setTimeout(countdown, 1000);
+                }
+            else	if(timeLeft<1&&min>0)
+                {
+                  timeLeft =59;
+                  timeLeft--;
+                  min--;
+                  setTimeout(countdown, 1000);
+                }
+                if(timeLeft<1)
+              {
+               document.getElementById("answer_panel").style.display="block";
+              // document.write(
+                 result();
+              
+              }
+                
+            };
+            
+            setTimeout(countdown, 1000);
+            
+            </script>
+                                      
+                
+                
+
+    
+
+
+                 <h5> &#169; 2024|<a href="mailto: elijeb9@gmail.com">elijeb9@gmail.com</a></h5>
+    <br>
+</div>
+
+</div>
+
+    </body>

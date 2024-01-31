@@ -1,0 +1,220 @@
+    <html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="css/Index.css">
+     <link rel="stylesheet" href="css/choice.css">
+    </head>
+<body>
+
+<div class="body_part">
+  <div class="list_of_header">
+    <h3>EERCS</h3>
+    <ul>
+      <li>
+            <a href="index.html">  
+<img src='icon/home.svg'>
+   
+       Home
+       </a>
+      </li>
+      
+
+      
+      
+      <li>
+            <a href="list_of_exam.html">   
+<img src='icon/question.svg'>
+     Question</a></li>
+ 
+      <li>
+   <a href="download.html"> 
+<img src='icon/resource.svg'>
+        
+        Resource</a></li>
+      
+    </ul>
+</div>
+  <div class="time-container">
+   <div id="answer_panel">10/10</div>
+<div id="clock">
+	<span id="seconds">4:59</span>
+</div></div>
+   <div id="cont"> 
+
+      
+     <h4> Which layer uses port number to identify
+applications?
+</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p>Application layer</p></label>
+        <label><input type="radio" >
+    <li>B.</li><p>
+Network layer
+    </p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p>Transport layer </p></label>
+        <label><input type="radio">
+    <li>D.</li><p>Physical layer</p></label>
+ </div>
+      <h4> Which one of the following is not an
+example of scripting languages?</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p>Python</p></label>
+        <label><input type="radio" >
+    <li>B.</li><p>PHP</p></label>
+        <label><input type="radio">
+    <li>C.</li><p>Perl</p></label>
+        <label><input type="radio"  data-answer=1 >
+    <li>D.</li><p> C++</p  ></label>
+ </div>
+ 
+       <h4>Contrary to the traditional file-based approach, in the database approach
+</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio" data-answer=1>
+    <li>A.</li><p>Data items are stored in multiple copies.</p></label>
+        <label><input type="radio">
+    <li>B.</li><p>There is a care about the definition of programs and data.</p></label>
+        <label><input type="radio" >
+    <li>C.</li><p>
+  Programs define and access their own data
+    </p></label>
+        <label><input type="radio">
+    <li>D.</li><p>Data and programs are defined independently</p></label>
+ </div>
+ 
+      <h4> The process of providing identifying information, such as a username, a logon ID, or an account number is known as:
+</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p>
+Authentication</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>B.</li><p>Identification</p></label>
+        <label><input type="radio" >
+    <li>C.</li>
+    <p>Mitigation</p>
+    </label>
+        <label><input type="radio">
+    <li>D.</li><p>Authorization</p></label>
+ </div>
+ 
+           <h4> In database integrity if the column does not allowed to accept null value, which integrity it has?
+</h4>
+      <div class="choiceCont">
+        
+    <label><input type="radio">
+    <li>A.</li><p> Entity integrity
+ 
+
+
+</p></label>
+        <label><input type="radio" >
+    <li>B.</li><p>Required data</p></label>
+        <label><input type="radio" data-answer=1>
+    <li>C.</li><p>Domain integrity</p></label>
+        <label><input type="radio">
+    <li>D.</li><p>Referential integrity</p></label>
+ </div>
+                <button onclick="result()">Result</button>
+
+                <script>
+        
+                    var h4=document.getElementsByTagName("h4");
+                var k, i,j,inp;
+               inp=document.getElementsByTagName("input");
+                var i=0,r=0;
+               
+               for(j=0; j<inp.length;j++)
+               {
+            inp[i++].setAttribute("name","q"+j); 
+             inp[i++].setAttribute("name","q"+j); 
+            inp[i++].setAttribute("name","q"+j); 
+            inp[i++].setAttribute("name","q"+j); 
+               
+               }
+               
+            
+             function result()
+             {
+             var totalans=0, correctAns=0;
+              var input=document.getElementsByTagName("input");
+             var label=document.getElementsByTagName("label");
+             for(i=0;i<input.length;i++)
+             {
+               
+               if(input[i].checked)
+               {
+                 totalans++;
+                 if(input[i].dataset.answer==1)
+                 {
+                  label[i].style.backgroundColor="#00cc99";
+                       label[i].style.color="white";  
+                    correctAns++;
+                 }
+                 else{
+                 label[i].style.backgroundColor="red";  
+                      label[i].style.color="white";  
+               }}
+             }
+             if(totalans<=h4.length)
+             {
+               document.getElementById("answer_panel").style.display="block";
+            document.getElementById('answer_panel').innerHTML=correctAns+"/5"; 
+            document.getElementById('clock').style.display="none";
+             }
+             }
+            
+            </script>
+            
+            
+            <script>
+                
+               timeLeft = 59;
+            min=5;
+            min--;
+            function countdown() {
+              
+                timeLeft--;
+                document.getElementById("seconds").innerHTML = String(min+":"+ timeLeft );
+                if (timeLeft > 0) {
+                    setTimeout(countdown, 1000);
+                }
+            else	if(timeLeft<1&&min>0)
+                {
+                  timeLeft =59;
+                  timeLeft--;
+                  min--;
+                  setTimeout(countdown, 1000);
+                }
+                if(timeLeft<1)
+              {
+               document.getElementById("answer_panel").style.display="block";
+              // document.write(
+                 result();
+              
+              }
+                
+            };
+            
+            setTimeout(countdown, 1000);
+            
+            </script>
+                                      
+                
+              <h5> &#169; 2024|<a href="mailto: elijeb9@gmail.com">elijeb9@gmail.com</a></h5>            
+  
+
+    <br>
+</div>
+
+</div>
+
+    </body>
